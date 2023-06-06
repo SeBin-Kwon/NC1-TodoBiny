@@ -28,7 +28,11 @@ struct AddView: View {
                     }
                 }
             }
+            .alert(isPresented: $showAlart) {
+                Alert(title: Text("할 일을 적어주세요!"))
+            }
         }
+        
     }
     
     func saveButton() {
@@ -40,6 +44,7 @@ struct AddView: View {
     
     func textIsAppropriate() -> Bool {
         if todoText.count == 0 {
+            showAlart.toggle()
             return false
         }
         return true
