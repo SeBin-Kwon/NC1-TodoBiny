@@ -8,24 +8,32 @@
 import SwiftUI
 
 struct DoView: View {
+    @EnvironmentObject var todoViewModel: TodoViewModel
+    @State private var isAdd = false
     var body: some View {
-        VStack {
-            HStack {
-                Text("Do")
-//                    .navigationTitle("do")
-//                    .font(.largeTitle)
-//                    .fontWeight(.bold)
-                Spacer()
-                Text("2")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }.padding(.horizontal,20)
-            Spacer()
-            List {
-                Text("todo 1")
-                Text("todo 2")
+        List {
+            ForEach(todoViewModel.items){
+                item in
+                ListRowView(item: item)
             }
-            .navigationTitle("Z")
+            .onDelete(perform: todoViewModel.deleteItem)
+            .onMove(perform: todoViewModel.moveItem)
+        }
+        .toolbar {
+            ToolbarItem() {
+                EditButton()
+            }
+            ToolbarItem {
+                Button {
+                    isAdd.toggle()
+                } label: {
+                    Label("Add a Todo", systemImage: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $isAdd) {
+            AddView()
+                .presentationDetents([.fraction(0.3)])
         }
     }
 }
@@ -33,5 +41,6 @@ struct DoView: View {
 struct DoView_Previews: PreviewProvider {
     static var previews: some View {
         DoView()
+            .environmentObject(TodoViewModel())
     }
 }

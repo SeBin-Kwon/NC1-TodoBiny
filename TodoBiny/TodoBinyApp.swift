@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct TodoBinyApp: App {
+    
+    @StateObject var todoViewModel = TodoViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(todoViewModel)
         }
     }
 }

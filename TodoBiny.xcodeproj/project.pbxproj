@@ -14,6 +14,10 @@
 		AE1C37732A2A0B3600F83F73 /* DoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37722A2A0B3600F83F73 /* DoView.swift */; };
 		AE1C37752A2A0B4300F83F73 /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37742A2A0B4300F83F73 /* DoneView.swift */; };
 		AE1C37772A2A0B5500F83F73 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37762A2A0B5500F83F73 /* SettingView.swift */; };
+		AE1C377F2A2DE11000F83F73 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C377E2A2DE11000F83F73 /* AddView.swift */; };
+		AE1C37812A2DE25E00F83F73 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37802A2DE25E00F83F73 /* ListRowView.swift */; };
+		AE1C37842A2E077E00F83F73 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37832A2E077E00F83F73 /* TodoModel.swift */; };
+		AE1C37872A2F54DB00F83F73 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		AE1C37722A2A0B3600F83F73 /* DoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoView.swift; sourceTree = "<group>"; };
 		AE1C37742A2A0B4300F83F73 /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		AE1C37762A2A0B5500F83F73 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		AE1C377E2A2DE11000F83F73 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		AE1C37802A2DE25E00F83F73 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		AE1C37832A2E077E00F83F73 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				AE1C37642A29D73600F83F73 /* TodoBinyApp.swift */,
+				AE1C37822A2E073900F83F73 /* Models */,
+				AE1C37852A2F54AE00F83F73 /* ViewModels */,
 				AE1C377A2A2A0EAD00F83F73 /* Views */,
 				AE1C37682A29D73800F83F73 /* Assets.xcassets */,
 				AE1C376A2A29D73800F83F73 /* Preview Content */,
@@ -78,10 +88,28 @@
 			children = (
 				AE1C37662A29D73600F83F73 /* ContentView.swift */,
 				AE1C37722A2A0B3600F83F73 /* DoView.swift */,
+				AE1C377E2A2DE11000F83F73 /* AddView.swift */,
+				AE1C37802A2DE25E00F83F73 /* ListRowView.swift */,
 				AE1C37742A2A0B4300F83F73 /* DoneView.swift */,
 				AE1C37762A2A0B5500F83F73 /* SettingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AE1C37822A2E073900F83F73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C37832A2E077E00F83F73 /* TodoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE1C37852A2F54AE00F83F73 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1C37872A2F54DB00F83F73 /* TodoViewModel.swift in Sources */,
 				AE1C37672A29D73600F83F73 /* ContentView.swift in Sources */,
+				AE1C37842A2E077E00F83F73 /* TodoModel.swift in Sources */,
+				AE1C37812A2DE25E00F83F73 /* ListRowView.swift in Sources */,
 				AE1C37772A2A0B5500F83F73 /* SettingView.swift in Sources */,
+				AE1C377F2A2DE11000F83F73 /* AddView.swift in Sources */,
 				AE1C37732A2A0B3600F83F73 /* DoView.swift in Sources */,
 				AE1C37752A2A0B4300F83F73 /* DoneView.swift in Sources */,
 				AE1C37652A29D73600F83F73 /* TodoBinyApp.swift in Sources */,
