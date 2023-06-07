@@ -15,7 +15,9 @@ class TodoViewModel: ObservableObject {
     }
     
     func getItems() {
-        let newItems = [Todo(title: "todo 123", progress: 0.0),Todo(title: "todo 123", progress: 0.0),Todo(title: "todo 123", progress: 0.0)]
+        let newItems = [Todo(title: "todo 1", progress: 0.0, isCompleted: false),
+                        Todo(title: "todo 2", progress: 50.0, isCompleted: false),
+                        Todo(title: "todo 3", progress: 100.0, isCompleted: true)]
         items.append(contentsOf: newItems)
     }
     
@@ -28,7 +30,7 @@ class TodoViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        let newItem = Todo(title: title, progress: 0.0)
+        let newItem = Todo(title: title, progress: 0.0, isCompleted: false)
         items.append(newItem)
     }
 }

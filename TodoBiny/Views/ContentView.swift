@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTab = 0
     @State private var title = "Do"
-//    @State private var isAdd = false
     var body: some View {
-        TabView(selection: $selectedTab) { 
+        TabView(selection: $selectedTab) {
             DoView()
                 .tag(0)
                 .tabItem {
@@ -31,7 +30,20 @@ struct ContentView: View {
                 }
         }
         .navigationTitle($title)
+        .onChange(of: selectedTab) { newValue in
+            switch selectedTab {
+            case 0:
+                title = "Do"
+            case 1:
+                title = "Done"
+            case 2:
+                title = "Setting"
+            default:
+                title = "Do"
+            }
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

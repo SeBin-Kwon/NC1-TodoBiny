@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct DoneView: View {
+    @EnvironmentObject var todoViewModel: TodoViewModel
     var body: some View {
-        Text("Done!")
+        List {
+            ForEach(todoViewModel.items){
+                item in
+                if item.isCompleted {
+                    ListRowView(item: item)
+
+                }
+            }
+        }
+
     }
 }
 
 struct DoneView_Previews: PreviewProvider {
     static var previews: some View {
         DoneView()
+            .environmentObject(TodoViewModel())
     }
 }

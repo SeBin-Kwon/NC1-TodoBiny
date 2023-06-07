@@ -13,12 +13,10 @@ struct AddView: View {
     @State private var todoText = ""
     @State private var save = false
     
-    @State private var showAlart = false
-    
     var body: some View {
         NavigationView {
             Form {
-                TextField("Todo", text: $todoText)
+                TextField("할 일을 적어주세요.", text: $todoText)
             }
             .navigationTitle("Add a Todo")
             .toolbar {
@@ -26,30 +24,17 @@ struct AddView: View {
                     Button("Save") {
                         saveButton()
                     }
+                    .disabled(todoText.count == 0)
                 }
-            }
-            .alert(isPresented: $showAlart) {
-                Alert(title: Text("할 일을 적어주세요!"))
             }
         }
         
     }
     
     func saveButton() {
-        if textIsAppropriate() {
-            todoViewModel.addItem(title: todoText)
-            dismiss()
-        }
+        todoViewModel.addItem(title: todoText)
+        dismiss()
     }
-    
-    func textIsAppropriate() -> Bool {
-        if todoText.count == 0 {
-            showAlart.toggle()
-            return false
-        }
-        return true
-    }
-    
 }
 
 struct AddView_Previews: PreviewProvider {

@@ -10,15 +10,22 @@ import SwiftUI
 struct DoView: View {
     @EnvironmentObject var todoViewModel: TodoViewModel
     @State private var isAdd = false
+    
     var body: some View {
         List {
             ForEach(todoViewModel.items){
                 item in
-                ListRowView(item: item)
+                if !item.isCompleted {
+                    ListRowView(item: item)
+                        
+                }
             }
             .onDelete(perform: todoViewModel.deleteItem)
             .onMove(perform: todoViewModel.moveItem)
         }
+//        .onChange(of: item.isCompleted) { newValue in
+//            
+//        }
         .toolbar {
             ToolbarItem() {
                 EditButton()
