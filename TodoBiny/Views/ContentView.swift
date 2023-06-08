@@ -15,19 +15,19 @@ struct ContentView: View {
             DoView()
                 .tag(0)
                 .tabItem {
-                    Label("Do", systemImage: "checkmark.square.fill")
+                    Label("Do", systemImage: "circle.dashed")
                 }
                 
             DoneView()
                 .tag(1)
                 .tabItem {
-                    Label("Done", systemImage: "checkmark.square.fill")
+                    Label("Done", systemImage: "checkmark.circle.fill")
                 }
             
             SettingView()
                 .tag(2)
                 .tabItem {
-                    Label("Setting", systemImage: "checkmark.square.fill")
+                    Label("Setting", systemImage: "gearshape")
                 }
         }
         .navigationTitle($title)

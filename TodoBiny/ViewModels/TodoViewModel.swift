@@ -11,15 +11,15 @@ class TodoViewModel: ObservableObject {
     @Published var items: [Todo] = []
     
     init() {
-        getItems()
+//        getItems()
     }
     
-    func getItems() {
-        let newItems = [Todo(title: "todo 1", progress: 0.0, isCompleted: false),
-                        Todo(title: "todo 2", progress: 50.0, isCompleted: false),
-                        Todo(title: "todo 3", progress: 100.0, isCompleted: true)]
-        items.append(contentsOf: newItems)
-    }
+//    func getItems() {
+//        let newItems = [Todo(title: "todo 1", progress: 0.0, isCompleted: false),
+//                        Todo(title: "todo 2", progress: 50.0, isCompleted: false),
+//                        Todo(title: "todo 3", progress: 100.0, isCompleted: true)]
+//        items.append(contentsOf: newItems)
+//    }
     
     func deleteItem(IndexSet: IndexSet) {
         items.remove(atOffsets: IndexSet)
