@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Todo: Identifiable {
+struct Todo: Identifiable, Hashable {
     let id: String
     let title: String
-    var progress: Double
-    var isCompleted: Bool
+    let progress: Double
+    let isCompleted: Bool
     
     init(id: String = UUID().uuidString, title: String, progress: Double, isCompleted: Bool) {
         self.id = id
@@ -19,4 +19,9 @@ struct Todo: Identifiable {
         self.progress = progress
         self.isCompleted = isCompleted
     }
+    
+    func updateTodo(id: String, newTitle: String, newProgress: Double, newCompleted: Bool) -> Todo {
+        return Todo(id: id, title: newTitle, progress: newProgress, isCompleted: newCompleted)
+    }
 }
+

@@ -32,5 +32,20 @@ class TodoViewModel: ObservableObject {
     func addItem(title: String) {
         let newItem = Todo(title: title, progress: 0.0, isCompleted: false)
         items.append(newItem)
+        print(items)
+    }
+    
+    func updateItem(item: Todo, title: String, progress: Double) {
+        if let index = items.firstIndex(where: { $0.id == item.id}) {
+            var updateCompleted: Bool
+            if Int(progress) == 100 {
+                updateCompleted = true
+            } else {
+                updateCompleted = false
+            }
+            
+            items[index] = item.updateTodo(id:item.id ,newTitle: title, newProgress: progress, newCompleted: updateCompleted)
+            print(items)
+        }
     }
 }

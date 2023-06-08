@@ -23,6 +23,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Done", systemImage: "checkmark.square.fill")
                 }
+            
             SettingView()
                 .tag(2)
                 .tabItem {
