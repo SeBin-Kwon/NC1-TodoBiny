@@ -11,15 +11,15 @@ class TodoViewModel: ObservableObject {
     @Published var items: [Todo] = []
     
     init() {
-//        getItems()
+        getItems()
     }
     
-//    func getItems() {
-//        let newItems = [Todo(title: "todo 1", progress: 0.0, isCompleted: false),
-//                        Todo(title: "todo 2", progress: 50.0, isCompleted: false),
-//                        Todo(title: "todo 3", progress: 100.0, isCompleted: true)]
-//        items.append(contentsOf: newItems)
-//    }
+    func getItems() {
+        let newItems = [Todo(title: "todo 1", progress: 0.0, isCompleted: false),
+                        Todo(title: "todo 2", progress: 50.0, isCompleted: false),
+                        Todo(title: "todo 3", progress: 100.0, isCompleted: true)]
+        items.append(contentsOf: newItems)
+    }
     
     func deleteItem(IndexSet: IndexSet) {
         items.remove(atOffsets: IndexSet)
@@ -35,17 +35,9 @@ class TodoViewModel: ObservableObject {
         print(items)
     }
     
-    func updateItem(item: Todo, title: String, progress: Double) {
+    func updateItem(item: Todo, newProgress: Double, newCompledted: Bool) {
         if let index = items.firstIndex(where: { $0.id == item.id}) {
-            var updateCompleted: Bool
-            if Int(progress) == 100 {
-                updateCompleted = true
-            } else {
-                updateCompleted = false
-            }
-            
-            items[index] = item.updateTodo(id:item.id ,newTitle: title, newProgress: progress, newCompleted: updateCompleted)
-            print(items)
+            items[index] = item.updateTodo(id: item.id ,newTitle: item.title, newProgress: newProgress, newCompleted: newCompledted)
         }
     }
 }

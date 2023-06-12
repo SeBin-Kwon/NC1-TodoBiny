@@ -11,16 +11,17 @@ struct DoneView: View {
     @EnvironmentObject var todoViewModel: TodoViewModel
 //    @State var isUpdate = false
     var body: some View {
-        List {
+        VStack {
             ForEach(todoViewModel.items, id:\.self){
                 item in
                 if item.isCompleted {
                     ListRowView(item: item)
-
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 17)
                 }
             }
+            Spacer()
         }
-
     }
 }
 

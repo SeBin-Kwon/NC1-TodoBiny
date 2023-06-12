@@ -10,34 +10,40 @@ import SwiftUI
 struct DoView: View {
     @EnvironmentObject var todoViewModel: TodoViewModel
     @State private var isAdd = false
-
+    @State private var isDelete = false
+    
     var body: some View {
-        List {
+        VStack {
             ForEach(todoViewModel.items, id:\.self){
                 item in
                 if !item.isCompleted {
                     ListRowView(item: item)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 17)
                 }
             }
             .onDelete(perform: todoViewModel.deleteItem)
             .onMove(perform: todoViewModel.moveItem)
+            Spacer()
         }
-        .toolbar {
-            ToolbarItem() {
-                EditButton()
-            }
-            ToolbarItem {
-                Button {
-                    isAdd.toggle()
-                } label: {
-                    Label("Add a Todo", systemImage: "plus")
-                }
-            }
-        }
-        .sheet(isPresented: $isAdd) {
-            AddView()
-                .presentationDetents([.fraction(0.3)])
-        }
+//        .padding()
+//        .background(Color("lightGray"))
+//        .toolbar {
+//            ToolbarItem() {
+//                EditButton()
+//            }
+//            ToolbarItem {
+//                Button {
+//                    isAdd.toggle()
+//                } label: {
+//                    Label("Add a Todo", systemImage: "plus")
+//                }
+//            }
+//        }
+//        .sheet(isPresented: $isAdd) {
+//            AddView()
+//                .presentationDetents([.fraction(0.3)])
+//        }
     }
 }
 

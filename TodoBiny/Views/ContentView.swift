@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTab = 0
     @State private var title = "Do"
+    @State private var isAdd = false
     var body: some View {
         TabView(selection: $selectedTab) {
             DoView()
@@ -17,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Do", systemImage: "circle.dashed")
                 }
-                
+            
             DoneView()
                 .tag(1)
                 .tabItem {
@@ -29,6 +30,21 @@ struct ContentView: View {
                 .tabItem {
                     Label("Setting", systemImage: "gearshape")
                 }
+        }
+        .toolbar {
+            ToolbarItemGroup {
+//                EditButton()
+                EditView
+                Button {
+                    isAdd.toggle()
+                } label: {
+                    Label("Add a Todo", systemImage: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $isAdd) {
+            AddView()
+                .presentationDetents([.fraction(0.3)])
         }
         .navigationTitle($title)
         .onChange(of: selectedTab) { newValue in
@@ -43,15 +59,31 @@ struct ContentView: View {
                 title = "Do"
             }
         }
+        
     }
+    //
+    //    func editButton() {
+    //
+    //}
     
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(TodoViewModel())
+        }
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {        
-            ContentView()
+extension ContentView {
+    // Edit 뷰
+    var EditView: some View {
+        Button {
+            isAdd.toggle()
+        } label: {
+            Label("Delete a Todo", systemImage: "trash")
+//                .foregroundColor(.red)
         }
-        .environmentObject(TodoViewModel())
     }
 }

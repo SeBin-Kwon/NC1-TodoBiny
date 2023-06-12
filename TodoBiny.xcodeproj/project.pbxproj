@@ -18,6 +18,7 @@
 		AE1C37812A2DE25E00F83F73 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37802A2DE25E00F83F73 /* ListRowView.swift */; };
 		AE1C37842A2E077E00F83F73 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37832A2E077E00F83F73 /* TodoModel.swift */; };
 		AE1C37872A2F54DB00F83F73 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */; };
+		AE1C378C2A3734A700F83F73 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C378B2A3734A700F83F73 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AE1C37802A2DE25E00F83F73 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		AE1C37832A2E077E00F83F73 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		AE1C378B2A3734A700F83F73 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				AE1C37822A2E073900F83F73 /* Models */,
 				AE1C37852A2F54AE00F83F73 /* ViewModels */,
 				AE1C377A2A2A0EAD00F83F73 /* Views */,
+				AE1C378A2A37349A00F83F73 /* Utils */,
 				AE1C37682A29D73800F83F73 /* Assets.xcassets */,
 				AE1C376A2A29D73800F83F73 /* Preview Content */,
 			);
@@ -110,6 +113,14 @@
 				AE1C37862A2F54DB00F83F73 /* TodoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AE1C378A2A37349A00F83F73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C378B2A3734A700F83F73 /* Colors.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				AE1C37872A2F54DB00F83F73 /* TodoViewModel.swift in Sources */,
 				AE1C37672A29D73600F83F73 /* ContentView.swift in Sources */,
 				AE1C37842A2E077E00F83F73 /* TodoModel.swift in Sources */,
+				AE1C378C2A3734A700F83F73 /* Colors.swift in Sources */,
 				AE1C37812A2DE25E00F83F73 /* ListRowView.swift in Sources */,
 				AE1C37772A2A0B5500F83F73 /* SettingView.swift in Sources */,
 				AE1C377F2A2DE11000F83F73 /* AddView.swift in Sources */,
@@ -327,6 +339,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +369,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
