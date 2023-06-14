@@ -82,8 +82,7 @@ extension ContentView {
         Button {
             isAdd.toggle()
         } label: {
-            Label("Delete a Todo", systemImage: "trash")
-//                .foregroundColor(.red)
+            Label("Selete a Todo", systemImage: "square.dashed")
         }
     }
 }

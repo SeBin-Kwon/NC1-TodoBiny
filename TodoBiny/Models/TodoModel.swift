@@ -12,12 +12,14 @@ struct Todo: Identifiable, Hashable {
     let title: String
     let progress: Double
     let isCompleted: Bool
+    let isSelected: Bool
     
-    init(id: UUID = UUID(), title: String, progress: Double, isCompleted: Bool) {
+    init(id: UUID = UUID(), title: String, progress: Double, isCompleted: Bool, isSelected: Bool = false) {
         self.id = id
         self.title = title
         self.progress = progress
         self.isCompleted = isCompleted
+        self.isSelected = isSelected
     }
     
 //    mutating func updateData(newItem: Todo) {
